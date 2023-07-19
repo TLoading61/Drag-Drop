@@ -24,8 +24,6 @@ $(document).ready(() => {
         e.preventDefault();
         e.stopPropagation();
 
-        console.log('coucou')
-
         let dropX = e.pageX;
         let dropY = e.pageY;
 
@@ -34,11 +32,12 @@ $(document).ready(() => {
             let choosenCard = $(element);
             let pos = choosenCard.position();
 
-            console.log(choosenCard);
+            console.log(pos);
+            console.log("t" + positionCard.top);
 
 
             if(
-                dropX <= pos.left
+                dropX <= pos.left && dropY.top >= pos.top
             ){
                 console.log("Coucou")
             }
