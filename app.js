@@ -29,9 +29,9 @@ $(document).ready(() => {
         let dropX = e.pageX;
         let dropY = e.pageY;
 
-        carte.each(() => {
+        carte.not(selectedCard).each((index, element) => {
             
-            let choosenCard = $(e.target);
+            let choosenCard = $(element);
             let pos = choosenCard.position();
 
             console.log(choosenCard);
