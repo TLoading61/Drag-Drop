@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;700&display=swap');
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #333;
+    color: #e0e0e0;
+    font-family: Inter;
+}
+
+h1{
+    text-align: center;
+}
+
+#wrapper{
+    max-width: 1600px;
+    margin: 50px auto;
+}
+
+#cards{
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+}
+
+.card{
+    height: 150px;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card p{
+    font-size: 26px;
+    text-transform: uppercase;
+    font-weight: 300;
+}
+
+.card_1{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.5)), url(images/mercure.jpg);
+}
+
+.card_2{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.5)),url(images/venus.jpg);
+}
+
+.card_3{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.5)),url(images/terre.jpg);
+}
+
+.card_4{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.5)),url(images/mars.jpg);
+}
+
+.card_5{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.5)),url(images/jupiter.jpg);
+    background-position: center;
+}
+
+.card_6{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.5)),url(images/saturne.jpg);
+    background-position: center left;
+}
+
+.card_7{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.5)),url(images/neptune.jpg);
+    background-position: bottom;
+}
+
+.card_8{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.5)),url(images/uranus.jpg);
+}
+
+.card_9{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.5)),url(images/pluton.jpg);
+}
+
+@media screen and (max-width: 950px) {
+    #cards{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 650px) {
+    #cards{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
