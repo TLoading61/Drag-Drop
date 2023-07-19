@@ -41,6 +41,8 @@ $(document).ready(() => {
             ){
                 console.log(choosenCard)
                 choosenCard.replaceWith(selectedCard)
+
+                return false;
             }
 
         })
