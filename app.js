@@ -33,13 +33,14 @@ $(document).ready(() => {
             let pos = choosenCard.position();
 
             console.log(pos);
-            console.log("t" + positionCard.top);
+            console.log("t" + dropY);
 
 
             if(
-                dropX <= pos.left && dropY.top >= pos.top
+                dropX <= pos.left && dropY >= pos.top
             ){
-                console.log("Coucou")
+                console.log(choosenCard)
+                choosenCard.replaceWith(selectedCard)
             }
 
         })
