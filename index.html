@@ -1,49 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    
+
     <h1>Drag & Drop planets</h1>
 
     <div id="wrapper">
         <div id="cards">
-            <div class="card card_1">
+            <div class="card card_1" id="mercure" draggable="true">
                 <p>Mercure</p>
             </div>
-            <div class="card card_2">
+            <div class="card card_2" id="venus" draggable="true">
                 <p>Vénus</p>
             </div>
-            <div class="card card_3">
+            <div class="card card_3" id="terre" draggable="true">
                 <p>Terre</p>
             </div>
-            <div class="card card_4">
+            <div class="card card_4" id="mars" draggable="true">
                 <p>Mars</p>
             </div>
-            <div class="card card_5">
+            <div class="card card_5" id="jupiter" draggable="true">
                 <p>Jupiter</p>
             </div>
-            <div class="card card_6">
+            <div class="card card_6" id="saturne" draggable="true">
                 <p>Saturne</p>
             </div>
-            <div class="card card_7">
+            <div class="card card_7" id="neptune" draggable="true">
                 <p>Neptune</p>
             </div>
-            <div class="card card_8">
+            <div class="card card_8" id="uranus" draggable="true">
                 <p>Uranus</p>
             </div>
-            <div class="card card_9">
-                <p>PLuton</p>
+            <div class="card card_9" id="pluton" draggable="true">
+                <p>Pluton</p>
             </div>
         </div>
     </div>
 
-
+    <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="app.js"></script>
 </body>
+
 </html>
