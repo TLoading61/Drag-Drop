@@ -10,59 +10,62 @@ let pluton = $("#pluton").draggable();*/
 
 $(document).ready(() => {
     let carte = $(".card").draggable();
-
+  
     let selectedCard;
-    let positionCard;
-    
+    let originalTop;
+    let originalLeft;
+  
     carte.on('dragstart', (e) => {
-        selectedCard = $(e.target);
-        positionCard = selectedCard.position();   
-    })
-
+      selectedCard = $(e.target);
+      let boundingRect = selectedCard.get(0).getBoundingClientRect();
+      originalTop = boundingRect.top;
+      originalLeft = boundingRect.left;
+    });
+  
     carte.on('dragstop', (e) => {
-
-        e.preventDefault();
-        e.stopPropagation();
-
-        let dropX = e.pageX;
-        let dropY = e.pageY;
-
-        carte.not(selectedCard).each((index, element) => {
-            
-            let choosenCard = $(element);
-            let pos = choosenCard.position();
-
-            console.log(pos);
-            console.log("t" + dropY);
-
-
-            if(
-                dropX <= pos.left && dropY >= pos.top
-            ){
-                console.log(choosenCard)
-                choosenCard.replaceWith(selectedCard)
-
-                return false;
-            }
-
-        })
-            
-
-
-        //savoir si je chevauche une autre carte
-        // si c'est le cas, la carte chevauchée prends la position initale
-    })
-
-    
-
-    
-
-
-})
-
-
-
-
-
-
-
+      e.preventDefault();
+      e.stopPropagation();
+  
+      let dropX = e.pageX;
+      let dropY = e.pageY;
+  
+      let dropCard = null;
+  
+      carte.not(selectedCard).each((index, element) => {
+        let choosenCard = $(element);
+        let boundingRect = choosenCard.get(0).getBoundingClientRect();
+  
+        if (
+          dropX <= boundingRect.left + boundingRect.width &&
+          dropX >= boundingRect.left &&
+          dropY <= boundingRect.top + boundingRect.height &&
+          dropY >= boundingRect.top
+        ) {
+          dropCard = choosenCard;
+          return false;
+        }
+      });
+  
+      if (dropCard) {
+        // Échanger les positions des cartes
+        let tempTop = dropCard.css('top');
+        let tempLeft = dropCard.css('left');
+  
+        dropCard.css({
+          top: originalTop + "px",
+          left: originalLeft + "px",
+        });
+  
+        selectedCard.css({
+          top: tempTop,
+          left: tempLeft,
+        });
+      } else {
+        // Remettre la carte à sa position d'origine si elle n'est pas lâchée sur une autre carte
+        selectedCard.css({
+          top: originalTop + "px",
+          left: originalLeft + "px",
+        });
+      }
+    });
+  });
